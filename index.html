@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic-Tac-Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,56 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Tic-Tac-Toe</h1>
+    <section>
+      <h2>Sign In</h2>
+      <form id="sign-in">
+        <input type="text" required placeholder="Enter Email" name="credentials[email]">
+        <input type="password" required placeholder="Enter Password" name="credentials[password]">
+        <button type="submit">Sign In</button>
+      </form>
+    </section>
+    <section>
+      <h2>Sign Up</h2>
+      <form id="sign-up">
+        <input type="text" required placeholder="Enter Email" name="credentials[email]">
+        <input type="password" required placeholder="Enter Password" name="credentials[password]">
+        <input type="password" required placeholder="Re-enter Password" name="credentials[password_confirmation]">
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
+    <section>
+     <form id="change-password">
+       <h2>Change Password</h2>
+       <input required placeholder="Old Password" type="password" name="password[old]">
+       <input required placeholder="New password" type="password" name="password[new]">
+       <button type="submit">Change Password</button>
+     </form>
+    </section>
+    <div class="buttons">
+      <form id="sign-out">
+        <button type="submit">Sign Out</button>
+      </form>
+      <button type="click">Stats</button>
+    </div>
+    <div class="p-container">
+      <p id="new-game-text">Placeholder</p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-4 box" id="one"></div>
+        <div class="col-4 box" id="two"></div>
+        <div class="col-4 box" id="three"></div>
+        <div class="col-4 box" id="four"></div>
+        <div class="col-4 box" id="five"></div>
+        <div class="col-4 box" id="six"></div>
+        <div class="col-4 box" id="seven"></div>
+        <div class="col-4 box" id="eight"></div>
+        <div class="col-4 box" id="nine"></div>
+      </div>
+    </div>
+    <form id="new-game">
+      <button type="submit">NEW GAME</button>
+    </form>
     </body>
 </html>

@@ -1,1 +1,40 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: gray;
+  padding-top: 20px;
+}
+
+.buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.container {
+  margin-top: 60px;
+  width: 600px;
+}
+
+.box {
+  align-items: center;
+  background-color: #21bc70;
+  color: black;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  padding: 40px;
+}
+
+#one, #two, #four, #five {
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+#three, #six {
+  border-bottom: 1px solid white;
+}
+
+#seven, #eight {
+  border-right: 1px solid white;
+}
