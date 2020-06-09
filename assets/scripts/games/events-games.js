@@ -5,6 +5,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api-games')
 const ui = require('./ui-games')
 const store = require('./../store.js')
+const gameBoard = require('./game-board')
 
 const onCreateGame = function (event) {
   console.log(event)
@@ -16,7 +17,6 @@ const onCreateGame = function (event) {
 
 // start as x
 let currentPlayer = 'x'
-let currentState = false
 const onUpdateGame = function (event) {
   event.preventDefault()
 
@@ -32,15 +32,10 @@ const onUpdateGame = function (event) {
       currentPlayer = 'x'
     }
   }
-  const changeCurrentState = function () {
-    if (currentState === false && $(event.target) !== undefined) {
-      currentState = true
-    }
-    return currentState
-  }
+  // $(event.target).on('click', gameBoard.winner)
   api.updateGame()
-    .then(ui.showSuccess)
-    .catch(ui.showFailure)
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onUpdateGameFailure)
 }
 const onGetGames = function (event) {
   event.preventDefault()
@@ -53,6 +48,5 @@ const onGetGames = function (event) {
 module.exports = {
   onCreateGame,
   onGetGames,
-  onUpdateGame,
-  currentState
+  onUpdateGame
 }
