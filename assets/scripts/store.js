@@ -3,6 +3,11 @@
 const store = {
 }
 
+const turnNumber = {
+
+}
+
 module.exports = {
-  store
+  store,
+  turnNumber
 }

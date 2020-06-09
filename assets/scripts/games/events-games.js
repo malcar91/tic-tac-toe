@@ -1,11 +1,34 @@
-const addGameboardClickHandlers = function () {
-  $('#one').on('click', onUpdateGame)
-  $('#two').on('click', onUpdateGame)
-  $('#three').on('click', onUpdateGame)
-  $('#four').on('click', onUpdateGame)
-  $('#five').on('click', onUpdateGame)
-  $('#six').on('click', onUpdateGame)
-  $('#seven').on('click', onUpdateGame)
-  $('#eight').on('click', onUpdateGame)
-  $('#nine').on('click', onUpdateGame)
+'use strict'
+
+const getFormFields = require('../../../lib/get-form-fields')
+
+const api = require('./api-games')
+const ui = require('./ui-games')
+
+const onCreateGame = function (event) {
+  event.preventDefault()
+  api.createGame()
+    .then(ui.onCreateGameSuccess)
+    .catch(ui.onCreateGameFailure)
+}
+
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  api.updateGame()
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onUpdateGameFailure)
+}
+
+const onGetGames = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.getGames(data)
+    .then(ui.onGetGamesSuccess)
+    .catch(ui.onGetGamesFailure)
+}
+
+module.exports = {
+  onCreateGame,
+  onGetGames,
+  onUpdateGame
 }
