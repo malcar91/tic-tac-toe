@@ -3,11 +3,11 @@
 const store = {
 }
 
-const turnNumber = {
+const clicks = {
 
 }
 
 module.exports = {
   store,
-  turnNumber
+  clicks
 }

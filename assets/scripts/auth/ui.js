@@ -18,6 +18,10 @@ const signInSuccess = function (response) {
   console.log(response) // here we can see the token
   $('#message').text('Sign in was successful! Welcome back ' + response.user.email + '!')
   $('#message').show().removeClass().addClass('success')
+  $('#Sign-up').hide()
+  $('#Sign-in').hide()
+  $('#Change-password').show()
+  $('#play-game').show()
   $('form').trigger('reset')
   store.user = response.user
 }
@@ -46,6 +50,12 @@ const signOutSuccess = function (response) {
   $('form').trigger('reset')
   $('#message').text('You signed out successfully!')
   $('#message').show().removeClass().addClass('success')
+  $('#Sign-in').show()
+  $('#Sign-up').show()
+  $('#Change-password').hide()
+  $('#play-game').hide()
+  $('.row').hide()
+  $('#new-game').hide()
   store.user.token = null
 }
 

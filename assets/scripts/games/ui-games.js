@@ -1,5 +1,4 @@
 const store = require('./../store.js')
-const choice = require('./game-board')
 
 const onGetGamesSuccess = (response) => {
   console.log(response)
@@ -21,7 +20,7 @@ const onCreateGameFailure = (response) => {
 }
 
 const onUpdateGameSuccess = (response) => {
-  $('.box').text(choice.)
+  $('#message').text('Valid move!')
 }
 
 const onUpdateGameFailure = (response) => {

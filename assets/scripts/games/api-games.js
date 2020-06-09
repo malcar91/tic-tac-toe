@@ -1,5 +1,6 @@
 const config = require('./../config')
 const store = require('./../store.js')
+const events = require('./events-games')
 
 const createGame = function (response) {
   return $.ajax({
@@ -12,21 +13,22 @@ const createGame = function (response) {
   })
 }
 
-const updateGame = function (data) {
-  console.log(data)
+const updateGame = (index) => {
+  console.log(store.game)
+  const currentPlayer = store.game.player1Move ? 'x' : 'o'
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
+    url: config.apiUrl + '/games/' + store.game._id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: {
-      'game': {
-        'cell': {
-          'index': 0,
-          'value': 'x'
+      game: {
+        cell: {
+          index: index,
+          value: currentPlayer
         },
-        'over': false
+        over: currentState
       }
     }
   })
