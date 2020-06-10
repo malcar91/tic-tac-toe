@@ -2,10 +2,23 @@ const store = require('./../store.js')
 
 const onGetGamesSuccess = (response) => {
   console.log(response)
+  $('#message').text(`Games played... Placeholder`) // need to add something like ${store.games}
 }
 
 const onGetGamesFailure = (response) => {
   $('#message').text('Unable to get the requested games.')
+  // an idea
+  // let gamesHtml = ''
+  // store.games.forEach(game => {
+  //   const oneGame = (`
+  //     <p>Game Result:${game.cells}</p>
+  //     <p>ID: ${game._id}</p>
+  //     <p>Date Created: ${game.createdAt}</p>
+  //     <p>Updated On: ${game.updatedAt}</p>
+  //     <br>
+  //   `)
+  //   gamesHtml = gamesHtml + oneGame
+  // })
 }
 
 const onCreateGameSuccess = (response) => {
