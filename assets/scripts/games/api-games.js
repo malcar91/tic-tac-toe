@@ -28,7 +28,7 @@ const updateGame = (index, currentPlayer) => {
           index: index,
           value: currentPlayer
         },
-        over: false
+        over: store.game.over
       }
     }
   })

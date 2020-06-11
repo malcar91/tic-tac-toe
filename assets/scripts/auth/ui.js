@@ -16,12 +16,14 @@ const createFailure = function () {
 
 const signInSuccess = function (response) {
   console.log(response) // here we can see the token
-  $('#message').text('Sign in was successful! Welcome back ' + response.user.email + '!')
+  $('#message').text('Sign in was successful! Welcome back ' + response.user.email + '!' + ' Click Play Game to start a new game!')
   $('#message').show().removeClass().addClass('success')
   $('#Sign-up').hide()
   $('#Sign-in').hide()
   $('#Change-password').show()
   $('#play-game').show()
+  $('.buttons').show()
+  $('#notification').hide()
   $('form').trigger('reset')
   store.user = response.user
 }
@@ -58,6 +60,7 @@ const signOutSuccess = function (response) {
   $('#new-game').hide()
   $('#message1').hide()
   $('#display-winner').hide()
+  $('.buttons').hide()
   store.user.token = null
 }
 

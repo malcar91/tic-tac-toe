@@ -19,5 +19,7 @@ $(() => {
   $('.box').on('click', gamesEvents.onUpdateGame)
   $('#Change-password').hide()
   $('#play-game').hide()
+  $('.buttons').hide()
   $('#stats').on('submit', gamesEvents.onGetGames)
+  $('.box').css('background', 'transparent')
 })
