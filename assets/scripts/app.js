@@ -19,7 +19,5 @@ $(() => {
   $('.box').on('click', gamesEvents.onUpdateGame)
   $('#Change-password').hide()
   $('#play-game').hide()
-  // $('#new-game').on('submit', gamesEvents.onCreateGame)
   $('#stats').on('submit', gamesEvents.onGetGames)
-  $('#new-game-button').on('click', gamesEvents.onNewGame)
 })

@@ -56,6 +56,8 @@ const signOutSuccess = function (response) {
   $('#play-game').hide()
   $('.row').hide()
   $('#new-game').hide()
+  $('#message1').hide()
+  $('#display-winner').hide()
   store.user.token = null
 }
 

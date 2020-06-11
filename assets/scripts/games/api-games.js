@@ -13,9 +13,9 @@ const createGame = function (response) {
   })
 }
 
-const updateGame = (index) => {
+const updateGame = (index, currentPlayer) => {
   console.log(store.game)
-  const currentPlayer = store.game.player1Move ? 'x' : 'o'
+  // const currentPlayer = store.game.player1Move ? 'x' : 'o'
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/' + store.game._id,
@@ -37,7 +37,7 @@ const updateGame = (index) => {
 const getGames = function () {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/games/' + store.game._id,
+    url: config.apiUrl + '/games/',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
