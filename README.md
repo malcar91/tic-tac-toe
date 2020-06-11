@@ -1,7 +1,7 @@
 # Tic Tac Toe Game Project
 The Tic Tac Toe app I built is a client-side app.
 
-# The technologies used:
+# The technologies used
 HTML
 CSS
 Bootstrap
