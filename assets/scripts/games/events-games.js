@@ -13,7 +13,7 @@ const onCreateGame = function (event) {
   currentPlayer = 'x'
   $('.row').show()
   $('#display-winner').hide()
-  $('#message1').show().text("It's player's " + currentPlayer + ' move.')
+  $('#message1').show().text("It's player " + currentPlayer + ' move.')
 
   // $('#play-game').on('submit', newGame)
 
@@ -52,6 +52,7 @@ const onUpdateGame = function (event) {
     store.game.over = true
     $('#message1').text('')
     $('#message').text('')
+    $('.success').text('')
   } else if (board[3] === board[4] && board[4] === board[5] && board[3] !== '') {
     console.log('winner is ' + board[3])
     $('.row').hide()
@@ -59,6 +60,7 @@ const onUpdateGame = function (event) {
     store.game.over = true
     $('#message1').text('')
     $('#message').text('')
+    $('.success').text('')
   } else if (board[6] === board[7] && board[7] === board[8] && board[6] !== '') {
     console.log('winner is ' + board[6])
     $('.row').hide()
@@ -66,6 +68,7 @@ const onUpdateGame = function (event) {
     store.game.over = true
     $('#message1').text('')
     $('#message').text('')
+    $('.success').text('')
   } else if (board[0] === board[4] && board[4] === board[8] && board[0] !== '') {
     console.log('winner is ' + board[0])
     $('.row').hide()
@@ -73,6 +76,7 @@ const onUpdateGame = function (event) {
     store.game.over = true
     $('#message1').text('')
     $('#message').text('')
+    $('.success').text('')
   } else if (board[2] === board[4] && board[4] === board[6] && board[2] !== '') {
     console.log('winner is ' + board[2])
     $('.row').hide()
@@ -80,6 +84,7 @@ const onUpdateGame = function (event) {
     store.game.over = true
     $('#message1').text('')
     $('#message').text('')
+    $('.success').text('')
   } else if (board[1] === board[4] && board[4] === board[7] && board[1] !== '') {
     console.log('winner is ' + board[1])
     $('.row').hide()
@@ -87,6 +92,7 @@ const onUpdateGame = function (event) {
     store.game.over = true
     $('#message1').text('')
     $('#message').text('')
+    $('.success').text('')
   } else if (board[0] === board[3] && board[3] === board[6] && board[0] !== '') {
     console.log('winner is ' + board[0])
     $('.row').hide()
@@ -94,6 +100,7 @@ const onUpdateGame = function (event) {
     store.game.over = true
     $('#message1').text('')
     $('#message').text('')
+    $('.success').text('')
   } else if (board[2] === board[5] && board[5] === board[8] && board[2] !== '') {
     console.log('winner is ' + board[2])
     $('.row').hide()
@@ -101,6 +108,7 @@ const onUpdateGame = function (event) {
     store.game.over = true
     $('#message1').text('')
     $('#message').text('')
+    $('.success').text('')
   }
 
   if (store.game.cells.every(e => e !== '')) {
@@ -112,12 +120,6 @@ const onUpdateGame = function (event) {
     $('#message1').text('')
     $('#message').text('')
   }
-  // $('#message1').text('')
-
-  const index = $(event.target).data('cell-index')
-  api.updateGame(index, currentPlayer)
-    .then(ui.onUpdateGameSuccess)
-    .catch(ui.onUpdateGameFailure)
 }
 
 const onGetGames = function (event) {

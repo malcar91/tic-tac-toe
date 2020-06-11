@@ -9,6 +9,7 @@ h2 {
 body {
   background: url('https://images.unsplash.com/photo-1501979376754-2ff867a4f659?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80');
   // background-size: cover;
+  background-repeat: no-repeat;
   padding-top: 20px;
 }
 
@@ -35,6 +36,7 @@ body {
   font-size: 10vh;
   user-select: none;
 }
+
 
 #one, #two, #four, #five {
   border-right: 7px solid white;
