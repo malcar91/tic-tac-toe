@@ -67,6 +67,12 @@ input {
 }
 
 @media screen and (max-width: 550px) {
+  p {
+    font-size: 2.3vh;
+  }
+  input {
+    display: block;
+  }
   #chpw {
     display: block;
   }
