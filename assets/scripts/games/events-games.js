@@ -39,7 +39,7 @@ const onUpdateGame = function (event) {
     } else {
       currentPlayer = 'x'
     }
-    $('#message1').show().text("It's player's " + currentPlayer + ' move.') // I have a bug here, need to solve it
+    $('#message1').show().text("It's player " + currentPlayer + ' move.') // I have a bug here, need to solve it
   } else {
     $('#message').show().text('Invalid input!')
     return 'invalid move'
