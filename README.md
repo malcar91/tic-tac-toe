@@ -18,8 +18,8 @@ My planning began with a thorough read of the game API and the assignmemt requir
 
 # Wireframe
 
-[![Wireframe Desktop](https://i.imgur.com/HTQwFMM.jpg)
-[![Wireframe Mobile](https://i.imgur.com/C56LT6Q.jpg)
+![Wireframe Desktop](https://i.imgur.com/HTQwFMM.jpg)
+![Wireframe Mobile](https://i.imgur.com/C56LT6Q.jpg)
 
 
 # User Stories
