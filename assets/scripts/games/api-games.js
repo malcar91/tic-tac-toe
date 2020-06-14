@@ -1,6 +1,5 @@
 const config = require('./../config')
 const store = require('./../store.js')
-const events = require('./events-games')
 
 const createGame = function (response) {
   return $.ajax({

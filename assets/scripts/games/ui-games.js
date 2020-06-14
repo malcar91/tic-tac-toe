@@ -35,7 +35,7 @@ const onCreateGameFailure = (response) => {
 }
 
 const onUpdateGameSuccess = (response) => {
-  $('#message').removeClass().show().text('Valid move!')
+  $('#message').text('Valid move!')
 }
 
 const onUpdateGameFailure = (response) => {

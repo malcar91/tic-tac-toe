@@ -119,7 +119,12 @@ const onUpdateGame = function (event) {
     console.log(store.game)
     $('#message1').text('')
     $('#message').text('')
+    $('.success').text('')
   }
+  const index = $(event.target).data('cell-index')
+  api.updateGame(index, currentPlayer)
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onUpdateGameFailure)
 }
 
 const onGetGames = function (event) {
