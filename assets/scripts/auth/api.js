@@ -3,8 +3,6 @@ const config = require('./../config')
 const store = require('./../store.js')
 // User sign up
 const userCreate = function (formData) { // parameter can be anything
-  console.log(formData) // not necessary, more just a gut check
-  //
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
@@ -20,7 +18,6 @@ const userCreate = function (formData) { // parameter can be anything
 }
 
 const userSignIn = function (formData) { // parameter can be anything
-  console.log(formData) // not necessary, more just a gut check
   //
   return $.ajax({
     url: config.apiUrl + '/sign-in',

@@ -13,7 +13,6 @@ const createGame = function (response) {
 }
 
 const updateGame = (index, currentPlayer) => {
-  console.log(store.game)
   // const currentPlayer = store.game.player1Move ? 'x' : 'o'
   return $.ajax({
     method: 'PATCH',

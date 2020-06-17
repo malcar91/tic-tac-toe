@@ -1,7 +1,6 @@
 const store = require('./../store.js')
 
 const onGetGamesSuccess = (response) => {
-  console.log(response)
   $('#message').text(`You successfully retrived your previous games! Games played:${response.games.length}`)
   $('#message1').hide()
   // let gamesHtml = ''
@@ -27,7 +26,6 @@ const onCreateGameSuccess = (response) => {
 
   store.game = response.game
   store.games = response.games
-  console.log(store.game)
 }
 
 const onCreateGameFailure = (response) => {

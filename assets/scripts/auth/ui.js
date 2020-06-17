@@ -5,17 +5,14 @@ const createSuccess = function (response) {
   $('form').trigger('reset')
   $('#message').text('You signed up successfully! Welcome ' + response.user.email + '!')
   $('#message').show().removeClass().addClass('success')
-  console.log('createSuccess')
 }
 const createFailure = function () {
   $('form').trigger('reset')
   $('#message').text('Sign up failed! Try different email address.')
   $('#message').show().removeClass().addClass('failure')
-  console.log('createFailure')
 }
 
 const signInSuccess = function (response) {
-  console.log(response) // here we can see the token
   $('#message').text('Sign in was successful! Welcome back ' + response.user.email + '!' + ' Click Play Game to start a new game!')
   $('#message').show().removeClass().addClass('success')
   $('#Sign-up').hide()
@@ -28,7 +25,6 @@ const signInSuccess = function (response) {
   store.user = response.user
 }
 const signInFailure = function (response) {
-  console.log(response)
   $('form').trigger('reset')
   $('#message').text("Sign in failed! Your email and password don't match our records.")
   $('#message').show().removeClass().addClass('failure')
@@ -36,13 +32,11 @@ const signInFailure = function (response) {
 }
 
 const changePasswordSuccess = function (response) {
-  console.log(response) // here we can see the token
   $('#message').text('Your password is changed.')
   $('#message').show().removeClass().addClass('success')
   $('form').trigger('reset')
 }
 const changePasswordFailure = function (response) {
-  console.log(response)
   $('form').trigger('reset')
   $('#message').text('Password change was unsuccessful.')
   $('#message').show().removeClass().addClass('failure')
