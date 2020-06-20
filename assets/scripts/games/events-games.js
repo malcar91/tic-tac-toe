@@ -27,9 +27,8 @@ let currentPlayer = 'x'
 const onUpdateGame = function (event) {
   event.preventDefault()
 
-  store.game.cells[$(event.target).data('cell-index')] = currentPlayer
-
   if ($(event.target).is(':empty')) {
+    store.game.cells[$(event.target).data('cell-index')] = currentPlayer
     // add player to html board
     $(event.target).text(currentPlayer)
     // rotate turns
@@ -43,6 +42,8 @@ const onUpdateGame = function (event) {
     $('#message').show().text('Invalid input!')
     return 'invalid move'
   }
+
+  console.log(store.game)
   const board = store.game.cells
   let winner
   if (board[0] === board[1] && board[0] === board[2] && board[0] !== '') {
