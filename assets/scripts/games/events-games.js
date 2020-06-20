@@ -44,6 +44,7 @@ const onUpdateGame = function (event) {
     return 'invalid move'
   }
   const board = store.game.cells
+  let winner
   if (board[0] === board[1] && board[0] === board[2] && board[0] !== '') {
     $('.row').hide()
     $('#display-winner').show().text(`Player ${board[0]} won. To play a new game click Play Game!`)
@@ -51,6 +52,7 @@ const onUpdateGame = function (event) {
     $('#message1').text('')
     $('#message').text('')
     $('.success').text('')
+    winner = true
   } else if (board[3] === board[4] && board[4] === board[5] && board[3] !== '') {
     $('.row').hide()
     $('#display-winner').show().text(`Player ${board[3]} won. To play a new game click Play Game!`)
@@ -58,6 +60,7 @@ const onUpdateGame = function (event) {
     $('#message1').text('')
     $('#message').text('')
     $('.success').text('')
+    winner = true
   } else if (board[6] === board[7] && board[7] === board[8] && board[6] !== '') {
     $('.row').hide()
     $('#display-winner').show().text(`Player ${board[6]} won. To play a new game click Play Game!`)
@@ -65,6 +68,7 @@ const onUpdateGame = function (event) {
     $('#message1').text('')
     $('#message').text('')
     $('.success').text('')
+    winner = true
   } else if (board[0] === board[4] && board[4] === board[8] && board[0] !== '') {
     $('.row').hide()
     $('#display-winner').show().text(`Player ${board[0]} won. To play a new game click Play Game!`)
@@ -72,6 +76,7 @@ const onUpdateGame = function (event) {
     $('#message1').text('')
     $('#message').text('')
     $('.success').text('')
+    winner = true
   } else if (board[2] === board[4] && board[4] === board[6] && board[2] !== '') {
     $('.row').hide()
     $('#display-winner').show().text(`Player ${board[2]} won. To play a new game click Play Game!`)
@@ -79,6 +84,7 @@ const onUpdateGame = function (event) {
     $('#message1').text('')
     $('#message').text('')
     $('.success').text('')
+    winner = true
   } else if (board[1] === board[4] && board[4] === board[7] && board[1] !== '') {
     $('.row').hide()
     $('#display-winner').show().text(`Player ${board[1]} won. To play a new game click Play Game!`)
@@ -86,6 +92,7 @@ const onUpdateGame = function (event) {
     $('#message1').text('')
     $('#message').text('')
     $('.success').text('')
+    winner = true
   } else if (board[0] === board[3] && board[3] === board[6] && board[0] !== '') {
     $('.row').hide()
     $('#display-winner').show().text(`Player ${board[0]} won. To play a new game click Play Game!`)
@@ -93,6 +100,7 @@ const onUpdateGame = function (event) {
     $('#message1').text('')
     $('#message').text('')
     $('.success').text('')
+    winner = true
   } else if (board[2] === board[5] && board[5] === board[8] && board[2] !== '') {
     $('.row').hide()
     $('#display-winner').show().text(`Player ${board[2]} won. To play a new game click Play Game!`)
@@ -100,9 +108,10 @@ const onUpdateGame = function (event) {
     $('#message1').text('')
     $('#message').text('')
     $('.success').text('')
+    winner = true
   }
 
-  if (store.game.cells.every(e => e !== '')) {
+  if (winner === false && store.game.cells.every(e => e !== '')) {
     $('.row').hide()
     $('#display-winner').show().text("It's a tie! To play a new game click Play Game!")
     store.game.over = true
