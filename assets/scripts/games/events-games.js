@@ -42,8 +42,6 @@ const onUpdateGame = function (event) {
     $('#message').show().text('Invalid input!')
     return 'invalid move'
   }
-
-  console.log(store.game)
   const board = store.game.cells
   let winner
   if (board[0] === board[1] && board[0] === board[2] && board[0] !== '') {
